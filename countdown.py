@@ -13,7 +13,7 @@ def timesub():
 
 def countdown():
     global t,pause
-    while t!=0:
+    while t>-1:
         if not pause:
             global hr
             min,sec=divmod(t,60)
@@ -29,14 +29,14 @@ def countdown():
 
             time.sleep(1)
 
-            if t==1:
+            if t==0:
                 messagebox.showinfo("times up","your countdown has run out")
             
             t-=1
 
-    else:
-        root.update()
-        time.sleep(0.1)
+        else:
+            root.update()
+            time.sleep(0.1)
 
 def pause1():
     global pause,play
